@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--template标签是不会被渲染的-->
+    <!--<template v-if="false">
+        <div>
+            hello
+        </div>
+        <div>
+            world
+        </div>
+    </template>-->
+    <!--else 要跟在v-if后面，也可以跟在v-show后面-->
+
+    <!--v-show不支持template语法-->
+    <template v-show="true">123</template>
+    <div v-else>
+        i love you
+    </div>
+    <!--<div v-show="false">
+        hello
+    </div>-->
+</div>
+<script src="bower_components/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            message:'hello'
+        }
+    });
+    //v-show/v-if 区别
+    //v-show => ng-show 操作的是样式
+    //v-if => ng-if  操作的是dom
+
+</script>
+</body>
+</html>

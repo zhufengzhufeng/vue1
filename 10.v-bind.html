@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="app">
+    <!--绑定动态属性-->
+    <!--可以直接使用：号的方式进行绑定-->
+    <img :src="src" alt="">
+    <a :href="href">goBD</a>
+</div>
+<script src="bower_components/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'.app',
+        data:{
+            src:'http://cn.vuejs.org/images/logo.png',
+            href:'http://www.baidu.com'
+        }
+    })
+
+</script>
+
+</body>
+</html>

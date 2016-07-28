@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">1{{message}}
+    <input type="text" v-model="message">
+
+</div>
+<script src="bower_components/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            message:'hello'
+        }
+    });
+    //vm.$el不能更改绑定数据的元素
+    vm.$el = document.getElementById('app1')
+    //vm.$data 就是data对应的这个对象
+    //vm.$data = {age:100};//可以直接更改对象指定
+    //vm.$watch 监听数据变化
+    vm.$watch('message', function (newVal,oldVal) {
+        console.log(newVal,oldVal);
+    })
+</script>
+</body>
+</html>

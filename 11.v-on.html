@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="app">
+    <!--v-on执行方法的时候需要传递参数的时候添加(),如果不需要传递参数
+    如果需要传递参数我们要手动传入事件源-->
+    <!--我们可以通过@符号取代v-on:-->
+    <div @click="add($event,1,2)">
+        hello world
+    </div>
+</div>
+<script src="bower_components/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'.app',
+        data:{
+            src:'http://cn.vuejs.org/images/logo.png',
+            href:'http://www.baidu.com'
+        },
+        methods:{
+            add: function (e) {
+                //e事件源
+                console.log(event);
+                alert(100);
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

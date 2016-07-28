@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--在angular中使用ng-repeat  v-for-->
+    <template v-for="(key,m) in message">
+        {{$index}}{{key}}:{{$key}}:{{m}} <br>
+     </template>
+    <!--$index表示当前第几个（$odd $even $first $last）-->
+</div>
+<script src="bower_components/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            message:{
+                name:'zfpx',
+                age:7
+            }
+        }
+    });
+</script>
+</body>
+</html>

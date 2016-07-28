@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--<ul v-for="(key,mess) in message">
+        <li>{{key}}:{{$index}}{{mess.name}}:{{mess.price}}</li>
+    </ul>-->
+    <!--强制通过索引遍历-->
+    <!--<ul v-for="mess in message" track-by="$index">
+        <li>{{mess}}</li>
+    </ul>-->
+    <div v-for="(key,mess) in message">
+        <div v-for="a in mess.type">
+            {{key}}{{$index}}
+        </div>
+    </div>
+</div>
+<script src="bower_components/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            message:[
+                {name:'苹果',price:40,type:['white','black']},
+                {name:'三星',price:30,type:['gray']},
+                {name:'htc',price:20,type:['yellow','pink','purple']}
+            ],
+
+        }
+    });
+    /*,*/
+</script>
+</body>
+</html>

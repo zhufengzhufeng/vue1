@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="app">
+    <!--在angularjs中应用ng-model-->
+    <input type="text" v-model="message"> <br>
+    <!--支持三元表达式-->
+    {{message?message:'hello'}} <br>
+    <!--只绑定一次 视图变化时候不进行改变-->
+    {{*message}}
+    <!--绑定html标签-->
+    <!--angular $sce.trustAs-->
+    {{{message}}}
+    <!--识别html标签-->
+</div>
+<script src="bower_components/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'.app',
+        data:{
+            message:'<h1>Hello</h1>'
+        }
+    })
+
+</script>
+
+</body>
+</html>

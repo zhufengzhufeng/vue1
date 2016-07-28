@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--{{message}}-->
+    <!--ng-bind可以解决单个标签内的闪烁问题-->
+    <div v-text="message"></div>
+    <!--ng-cloak可以解决多级数据闪烁问题-->
+    <div v-cloak>
+        {{message}}
+    </div>
+</div>
+<script src="bower_components/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            message:'hello'
+        }
+    })
+</script>
+</body>
+</html>
